@@ -5,7 +5,6 @@ const error = document.querySelector('#error');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  console.log(form);
 
   if (name.value && cost.value) {
     const item = {
