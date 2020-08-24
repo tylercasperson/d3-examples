@@ -31,7 +31,7 @@
         </div>
         <div class="col s12 16 push-11"><div class="canvas"></div></div>
         <div class="row">
-          <div class="col m6 push-m3">
+          <form class="col m6 push-m3">
             <p class="flow-text grey-text center">
               How much <span>cycling</span> have you done today?
             </p>
@@ -41,11 +41,30 @@
               id="cycling"
               placeholder="Distance in m"
             />
-            <p class="center pink-text error text-lighten-1">error</p>
-          </div>
+            <p class="center pink-text error text-lighten-1"></p>
+          </form>
         </div>
       </div>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyAbKLWZTUTyH7oSlUOI4Of6x0ZiG_IEe3c',
+        authDomain: 'udemy-d3-firebase-12932.firebaseapp.com',
+        databaseURL: 'https://udemy-d3-firebase-12932.firebaseio.com',
+        projectId: 'udemy-d3-firebase-12932',
+        storageBucket: 'udemy-d3-firebase-12932.appspot.com',
+        messagingSenderId: '586926258896',
+        appId: '1:586926258896:web:6de09d7476e62bd3d87cd5',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
