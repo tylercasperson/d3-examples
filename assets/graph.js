@@ -28,12 +28,37 @@ const update = (data) => {
   x.domain(d3.extent(data, (d) => new Date(d.date)));
   y.domain([0, d3.max(data, (d) => d.distance)]);
 
-  const xAxis = d3.axisBottom(x).ticks(4);
+  const circles = graph.selectAll('circle').data(data);
 
-  const yAxis = d3.axisLeft(y).ticks(4);
+  circles.exit().remove();
+
+  circles
+    .attr('r', 4)
+    .attr('cx', (d) => x(new Date(d.date)))
+    .attr('cy', (d) => y(d.distance));
+
+  circles
+    .enter()
+    .append('circle')
+    .attr('r', 4)
+    .attr('cx', (d) => x(new Date(d.date)))
+    .attr('cy', (d) => y(d.distance))
+    .attr('fill', '#ccc');
+
+  const xAxis = d3.axisBottom(x).ticks(4).tickFormat(d3.timeFormat('%b %d'));
+
+  const yAxis = d3
+    .axisLeft(y)
+    .ticks(4)
+    .tickFormat((d) => d + 'm');
 
   xAxisGroup.call(xAxis);
   yAxisGroup.call(yAxis);
+
+  xAxisGroup
+    .selectAll('text')
+    .attr('transform', 'rotate(-40)')
+    .attr('text-anchor', 'end');
 };
 
 var data = [];
