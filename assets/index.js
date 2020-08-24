@@ -14,6 +14,10 @@ btns.forEach((btn) => {
     e.target.classList.add('active');
 
     input.setAttribute('id', activity);
+
+    formAct.textContent = activity;
+
+    update(data);
   });
 });
 

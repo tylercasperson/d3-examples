@@ -23,13 +23,13 @@
 
     <div class="container section">
       <div class="row">
-        <div class="col s12 15">
-          <button data-activity="cycling">Cycling</button>
+        <div class="col s12 l5">
+          <button class="active" data-activity="cycling">Cycling</button>
           <button data-activity="running">Running</button>
           <button data-activity="swimming">Swimming</button>
           <button data-activity="walking">Walking</button>
         </div>
-        <div class="col s12 16 push-11"><div class="canvas"></div></div>
+        <div class="col s12 l6 push-l1"><div class="canvas"></div></div>
         <div class="row">
           <form class="col m6 push-m3">
             <p class="flow-text grey-text center">
@@ -37,9 +37,9 @@
             </p>
             <input
               type="text"
-              class="gret-text"
+              class="grey-text"
               id="cycling"
-              placeholder="Distance in m"
+              placeholder="Distance in km"
             />
             <p class="center pink-text error text-lighten-1"></p>
           </form>
@@ -66,10 +66,7 @@
       const db = firebase.firestore();
     </script>
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script> -->
     <script src="./assets/index.js"></script>
     <script src="./assets/graph.js"></script>
   </body>
