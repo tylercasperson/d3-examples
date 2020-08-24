@@ -35,6 +35,23 @@ const line = d3
 
 const path = graph.append('path');
 
+const dottedLines = graph
+  .append('g')
+  .attr('class', 'lines')
+  .style('opacity', 0);
+
+const xDottedLine = dottedLines
+  .append('line')
+  .attr('stroke', '#aaa')
+  .attr('stroke-width', 1)
+  .attr('stroke-dasharray', 4);
+
+const yDottedLine = dottedLines
+  .append('line')
+  .attr('stroke', '#aaa')
+  .attr('stroke-width', 1)
+  .attr('stroke-dasharray', 4);
+
 const update = (data) => {
   data.filter((item) => item.activity == activity);
 
@@ -66,6 +83,39 @@ const update = (data) => {
     .attr('cx', (d) => x(new Date(d.date)))
     .attr('cy', (d) => y(d.distance))
     .attr('fill', '#ccc');
+
+  graph
+    .selectAll('circle')
+    .on('mouseover', (d, i, n) => {
+      d3.select(n[i])
+        .transition()
+        .duration(100)
+        .attr('r', 8)
+        .attr('fill', '#fff');
+
+      xDottedLine
+        .attr('x1', x(new Date(d.date)))
+        .attr('x2', x(new Date(d.date)))
+        .attr('y1', graphHeight)
+        .attr('y2', y(d.distance));
+
+      yDottedLine
+        .attr('x1', 0)
+        .attr('x2', x(new Date(d.date)))
+        .attr('y1', y(d.distance))
+        .attr('y2', y(d.distance));
+
+      dottedLines.style('opacity', 1);
+    })
+    .on('mouseleave', (d, i, n) => {
+      d3.select(n[i])
+        .transition()
+        .duration(100)
+        .attr('r', 4)
+        .attr('fill', '#ccc');
+
+      dottedLines.style('opacity', 0);
+    });
 
   const xAxis = d3.axisBottom(x).ticks(4).tickFormat(d3.timeFormat('%b %d'));
 
