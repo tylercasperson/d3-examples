@@ -15,9 +15,13 @@ const stratify = d3
 
 const tree = d3.tree().size([dims.width, dims.height]);
 
+const color = d3.scaleOrdinal(['#f4511e', '#e91e63', '#e53935', '#9c27b0']);
+
 const update = (data) => {
   graph.selectAll('.node').remove();
   graph.selectAll('.link').remove();
+
+  color.domain(data.map((item) => item.department));
 
   const rootNode = stratify(data);
 
@@ -50,7 +54,7 @@ const update = (data) => {
 
   enterNodes
     .append('rect')
-    .attr('fill', '#aaa')
+    .attr('fill', (d) => color(d.data.department))
     .attr('stroke', '#555')
     .attr('stroke-width', 2)
     .attr('height', 50)
