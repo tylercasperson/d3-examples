@@ -4,8 +4,92 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>D3 examples</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        text-align: center;
+        background: #c9565c;
+      }
+      .link {
+        color: black;
+        text-decoration-line: underline;
+      }
+      .intro {
+        text-align: start;
+        margin-left: 10vw;
+      }
+      .buttonGroup {
+        display: block;
+        width: 70vw;
+        margin: 0 15vw 0 15vw;
+      }
+      .option {
+        display: flex;
+      }
+      .btn-large {
+        margin: 10px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Here are some examples using the d3 library</h1>
+    <h1>Examples using d3 and firebase</h1>
+    <h5>
+      I wanted to learn more about d3...so I found a udemy course.
+      <br />
+      <a
+        class="link"
+        href="https://www.udemy.com/course/build-data-uis-with-d3-firebase/"
+        >Here is a link to the course.</a
+      >
+    </h5>
+    <br />
+    <h5 class="intro">Here is the work I did while following the tutorals:</h5>
+
+    <div class="buttonGroup">
+      <div class="card option">
+        <a class="waves-effect waves-light btn-large" href="fitnessTracker.html"
+          ><i class="material-icons right">fitness_center</i>Fitness Tracker</a
+        >
+        <div class="card-content">
+          Track the fitness done in different activities with a line graph.
+        </div>
+      </div>
+
+      <div class="card option">
+        <a class="waves-effect waves-light btn-large" href="budgetPlanner.html"
+          ><i class="material-icons right">attach_money</i>Budget Planner</a
+        >
+        <div class="card-content">
+          Add categories used for your expenses and see how it is divided on a
+          donut chart.
+        </div>
+      </div>
+
+      <div class="card option">
+        <a class="waves-effect waves-light btn-large" href="bubbleChart.html"
+          ><i class="material-icons right">adjust</i>Bubble Chart</a
+        >
+        <div class="card-content">
+          Static data is used to introduce data hiearchy. Data is grouped based
+          on hiearchy. The size changes based on the amount level.
+        </div>
+      </div>
+
+      <div class="card option">
+        <a class="waves-effect waves-light btn-large" href="treeDiagram.html"
+          ><i class="material-icons right">call_merge</i>Orginizational Chart</a
+        >
+        <div class="card-content">
+          A tree digram is used to show an orginizational chart of a business.
+        </div>
+      </div>
+    </div>
   </body>
 </html>
