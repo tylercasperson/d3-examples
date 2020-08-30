@@ -10,28 +10,24 @@
 
 #### Fitness Tracker
 
-[Github](https://github.com/tylercasperson/lineGraphFitnessTracker)
 Track the fitness done in different activities with a line graph.
 
 ---
 
 #### Budget Planner
 
-[Github](https://github.com/tylercasperson/budgetPlanner)
 Add categories used for your expenses and see how it is divided on a donut chart.
 
 ---
 
 #### Bubble Chart
 
-[Github](https://github.com/tylercasperson/dataHierarchy)
 Static data is used to introduce data hiearchy. Data is grouped based on hiearchy. The size changes based on the amount level.
 
 ---
 
 #### Orginizational Chart
 
-[Github](https://github.com/tylercasperson/dataHierarchy)
 A tree digram is used to show an orginizational chart of a business.
 
 ---
